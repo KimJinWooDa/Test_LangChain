@@ -18,11 +18,11 @@ if st.button("Generate Stats"):
         # Construct a prompt for LangChain
         prompt = f"Based on the character description: {character_description}, calculate game stats."
         
-        # Get a response from LangChain
-        result = chat_model.ask(prompt)
+        # Assuming there's a method called 'predict' in ChatOpenAI (replace 'predict' with the correct method name)
+        result = chat_model.predict(prompt)  # Modify this line
         
-        # Assume the result contains the stats in a string like "Attack: 10, Defense: 10, Speed: 10"
-        stats_str = result['message']['content']  # Adjust this line based on the actual structure of 'result'
+        # Parse the result to extract game stats (modify this part based on the actual structure of 'result')
+        stats_str = result['message']['content']  # Adjust this line
         stats_list = stats_str.split(', ')
         stats_dict = {stat.split(': ')[0]: int(stat.split(': ')[1]) for stat in stats_list}
         
